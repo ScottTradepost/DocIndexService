@@ -1,0 +1,11 @@
+C:\Users\scott\sq_Media_Projects\DocIndexService\src\DocIndexService.Core\bin\Debug\net8.0\DocIndexService.Core.deps.json
+C:\Users\scott\sq_Media_Projects\DocIndexService\src\DocIndexService.Core\bin\Debug\net8.0\DocIndexService.Core.dll
+C:\Users\scott\sq_Media_Projects\DocIndexService\src\DocIndexService.Core\bin\Debug\net8.0\DocIndexService.Core.pdb
+C:\Users\scott\sq_Media_Projects\DocIndexService\src\DocIndexService.Core\obj\Debug\net8.0\DocIndexService.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\scott\sq_Media_Projects\DocIndexService\src\DocIndexService.Core\obj\Debug\net8.0\DocIndexService.Core.AssemblyInfoInputs.cache
+C:\Users\scott\sq_Media_Projects\DocIndexService\src\DocIndexService.Core\obj\Debug\net8.0\DocIndexService.Core.AssemblyInfo.cs
+C:\Users\scott\sq_Media_Projects\DocIndexService\src\DocIndexService.Core\obj\Debug\net8.0\DocIndexService.Core.csproj.CoreCompileInputs.cache
+C:\Users\scott\sq_Media_Projects\DocIndexService\src\DocIndexService.Core\obj\Debug\net8.0\DocIndexService.Core.dll
+C:\Users\scott\sq_Media_Projects\DocIndexService\src\DocIndexService.Core\obj\Debug\net8.0\refint\DocIndexService.Core.dll
+C:\Users\scott\sq_Media_Projects\DocIndexService\src\DocIndexService.Core\obj\Debug\net8.0\DocIndexService.Core.pdb
+C:\Users\scott\sq_Media_Projects\DocIndexService\src\DocIndexService.Core\obj\Debug\net8.0\ref\DocIndexService.Core.dll

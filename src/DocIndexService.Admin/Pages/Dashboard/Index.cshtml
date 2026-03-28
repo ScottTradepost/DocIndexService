@@ -1,0 +1,57 @@
+@page
+@model DocIndexService.Admin.Pages.Dashboard.IndexModel
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<h1 class="h4 mb-3">Dashboard</h1>
+<p class="text-muted">Operational summary and ingestion status will appear here.</p>
+
+<div class="row g-3">
+    <div class="col-sm-6 col-lg-3"><div class="card"><div class="card-body"><strong>Total Sources</strong><div class="text-muted">@Model.Stats?.TotalSources</div></div></div></div>
+    <div class="col-sm-6 col-lg-3"><div class="card"><div class="card-body"><strong>Active Sources</strong><div class="text-muted">@Model.Stats?.ActiveSources</div></div></div></div>
+    <div class="col-sm-6 col-lg-3"><div class="card"><div class="card-body"><strong>Total Documents</strong><div class="text-muted">@Model.Stats?.TotalDocuments</div></div></div></div>
+    <div class="col-sm-6 col-lg-3"><div class="card"><div class="card-body"><strong>Indexed Documents</strong><div class="text-muted">@Model.Stats?.IndexedDocuments</div></div></div></div>
+    <div class="col-sm-6 col-lg-3"><div class="card"><div class="card-body"><strong>Pending Jobs</strong><div class="text-muted">@Model.Stats?.PendingJobs</div></div></div></div>
+    <div class="col-sm-6 col-lg-3"><div class="card"><div class="card-body"><strong>Failed Jobs</strong><div class="text-muted">@Model.Stats?.FailedJobs</div></div></div></div>
+    <div class="col-sm-6 col-lg-3"><div class="card"><div class="card-body"><strong>Deleted Documents</strong><div class="text-muted">@Model.Stats?.DeletedDocuments</div></div></div></div>
+    <div class="col-sm-6 col-lg-3"><div class="card"><div class="card-body"><strong>Last Scan (UTC)</strong><div class="text-muted">@(Model.Stats?.LastScanUtc?.ToString("u") ?? "n/a")</div></div></div></div>
+</div>
+
+<div class="card mt-3">
+    <div class="card-header">Recent Ingestion Activity</div>
+    <div class="table-responsive">
+        <table class="table table-sm mb-0">
+            <thead>
+                <tr>
+                    <th>Started (UTC)</th>
+                    <th>Type</th>
+                    <th>Status</th>
+                    <th>Source</th>
+                    <th>Document</th>
+                    <th>Error</th>
+                </tr>
+            </thead>
+            <tbody>
+            @if (Model.Stats?.RecentActivity?.Count > 0)
+            {
+                foreach (var activity in Model.Stats.RecentActivity)
+                {
+                    <tr>
+                        <td>@activity.StartedUtc.ToString("u")</td>
+                        <td>@activity.JobType</td>
+                        <td>@activity.Status</td>
+                        <td><code>@activity.SourceId</code></td>
+                        <td>@(activity.DocumentId?.ToString() ?? "-")</td>
+                        <td class="text-danger">@activity.ErrorMessage</td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr><td colspan="6" class="text-muted">No activity yet.</td></tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>

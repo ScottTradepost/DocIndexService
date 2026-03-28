@@ -1,0 +1,17 @@
+C:\Users\scott\sq_Media_Projects\DocIndexService\src\DocIndexService.Application\bin\Debug\net8.0\DocIndexService.Application.deps.json
+C:\Users\scott\sq_Media_Projects\DocIndexService\src\DocIndexService.Application\bin\Debug\net8.0\DocIndexService.Application.dll
+C:\Users\scott\sq_Media_Projects\DocIndexService\src\DocIndexService.Application\bin\Debug\net8.0\DocIndexService.Application.pdb
+C:\Users\scott\sq_Media_Projects\DocIndexService\src\DocIndexService.Application\bin\Debug\net8.0\DocIndexService.Contracts.dll
+C:\Users\scott\sq_Media_Projects\DocIndexService\src\DocIndexService.Application\bin\Debug\net8.0\DocIndexService.Core.dll
+C:\Users\scott\sq_Media_Projects\DocIndexService\src\DocIndexService.Application\bin\Debug\net8.0\DocIndexService.Core.pdb
+C:\Users\scott\sq_Media_Projects\DocIndexService\src\DocIndexService.Application\bin\Debug\net8.0\DocIndexService.Contracts.pdb
+C:\Users\scott\sq_Media_Projects\DocIndexService\src\DocIndexService.Application\obj\Debug\net8.0\DocIndexService.Application.csproj.AssemblyReference.cache
+C:\Users\scott\sq_Media_Projects\DocIndexService\src\DocIndexService.Application\obj\Debug\net8.0\DocIndexService.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\scott\sq_Media_Projects\DocIndexService\src\DocIndexService.Application\obj\Debug\net8.0\DocIndexService.Application.AssemblyInfoInputs.cache
+C:\Users\scott\sq_Media_Projects\DocIndexService\src\DocIndexService.Application\obj\Debug\net8.0\DocIndexService.Application.AssemblyInfo.cs
+C:\Users\scott\sq_Media_Projects\DocIndexService\src\DocIndexService.Application\obj\Debug\net8.0\DocIndexService.Application.csproj.CoreCompileInputs.cache
+C:\Users\scott\sq_Media_Projects\DocIndexService\src\DocIndexService.Application\obj\Debug\net8.0\DocIndex.2A532E0D.Up2Date
+C:\Users\scott\sq_Media_Projects\DocIndexService\src\DocIndexService.Application\obj\Debug\net8.0\DocIndexService.Application.dll
+C:\Users\scott\sq_Media_Projects\DocIndexService\src\DocIndexService.Application\obj\Debug\net8.0\refint\DocIndexService.Application.dll
+C:\Users\scott\sq_Media_Projects\DocIndexService\src\DocIndexService.Application\obj\Debug\net8.0\DocIndexService.Application.pdb
+C:\Users\scott\sq_Media_Projects\DocIndexService\src\DocIndexService.Application\obj\Debug\net8.0\ref\DocIndexService.Application.dll

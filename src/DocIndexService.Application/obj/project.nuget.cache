@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "GCgFXqUZA98=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\scott\\sq_Media_Projects\\DocIndexService\\src\\DocIndexService.Application\\DocIndexService.Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\scott\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.1\\microsoft.extensions.dependencyinjection.abstractions.8.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

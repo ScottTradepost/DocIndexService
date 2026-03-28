@@ -1,0 +1,23 @@
+@page
+@model DocIndexService.Admin.Pages.Audit.IndexModel
+@{
+    ViewData["Title"] = "Audit Log";
+}
+
+<h1 class="h4 mb-3">Audit Log</h1>
+<p class="text-muted">Administrative actions and changes will be listed here.</p>
+
+<div class="card">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-sm mb-0">
+                <thead>
+                    <tr><th>Time</th><th>User</th><th>Action</th><th>Entity</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td class="text-muted" colspan="4">No audit events yet.</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

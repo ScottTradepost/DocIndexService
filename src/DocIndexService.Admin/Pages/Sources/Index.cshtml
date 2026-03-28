@@ -1,0 +1,132 @@
+@page
+@model DocIndexService.Admin.Pages.Sources.IndexModel
+@{
+    ViewData["Title"] = "Sources";
+}
+
+<h1 class="h4 mb-3">Sources</h1>
+<p class="text-muted">Manage indexing source directories and scan operations.</p>
+
+@if (!string.IsNullOrWhiteSpace(Model.StatusMessage))
+{
+    <div class="alert alert-info">@Model.StatusMessage</div>
+}
+
+<div class="card">
+    <div class="card-body">
+        <h2 class="h6 mb-3">Add Source</h2>
+        <form method="post" asp-page-handler="Create" class="row g-2">
+            <div class="col-md-4">
+                <input asp-for="NewSource.Name" class="form-control form-control-sm" placeholder="Name" />
+            </div>
+            <div class="col-md-8">
+                <input asp-for="NewSource.RootPath" class="form-control form-control-sm" placeholder="Root path" />
+            </div>
+            <div class="col-md-4">
+                <input asp-for="NewSource.IncludePatterns" class="form-control form-control-sm" placeholder="Include patterns" />
+            </div>
+            <div class="col-md-4">
+                <input asp-for="NewSource.ExcludePatterns" class="form-control form-control-sm" placeholder="Exclude patterns" />
+            </div>
+            <div class="col-md-2">
+                <input asp-for="NewSource.ScanIntervalMinutes" class="form-control form-control-sm" />
+            </div>
+            <div class="col-md-2 d-flex align-items-center gap-3">
+                <div class="form-check">
+                    <input asp-for="NewSource.IsRecursive" class="form-check-input" />
+                    <label asp-for="NewSource.IsRecursive" class="form-check-label">Recursive</label>
+                </div>
+                <div class="form-check">
+                    <input asp-for="NewSource.IsEnabled" class="form-check-input" />
+                    <label asp-for="NewSource.IsEnabled" class="form-check-label">Enabled</label>
+                </div>
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary btn-sm">Add Source</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="card mt-3">
+    <div class="card-header">Configured Sources</div>
+    <div class="table-responsive">
+        <table class="table table-sm mb-0">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Root Path</th>
+                    <th>Interval</th>
+                    <th>Status</th>
+                    <th>Last Scan (UTC)</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            @if (Model.Sources.Count > 0)
+            {
+                foreach (var source in Model.Sources)
+                {
+                    <tr>
+                        <td>@source.Name</td>
+                        <td>@source.RootPath</td>
+                        <td>@source.ScanIntervalMinutes min</td>
+                        <td>@(source.IsEnabled ? "Enabled" : "Disabled")</td>
+                        <td>@(source.LastScanUtc?.ToString("u") ?? "n/a")</td>
+                        <td>
+                            <div class="d-flex gap-1">
+                                <form method="post" asp-page-handler="SetEnabled">
+                                    <input type="hidden" name="sourceId" value="@source.Id" />
+                                    <input type="hidden" name="isEnabled" value="@(!source.IsEnabled)" />
+                                    <button type="submit" class="btn btn-outline-secondary btn-sm">@(source.IsEnabled ? "Disable" : "Enable")</button>
+                                </form>
+                                <form method="post" asp-page-handler="ScanNow">
+                                    <input type="hidden" name="sourceId" value="@source.Id" />
+                                    <input type="hidden" name="fullReconciliation" value="false" />
+                                    <button type="submit" class="btn btn-outline-primary btn-sm">Scan Now</button>
+                                </form>
+                                <form method="post" asp-page-handler="ScanNow">
+                                    <input type="hidden" name="sourceId" value="@source.Id" />
+                                    <input type="hidden" name="fullReconciliation" value="true" />
+                                    <button type="submit" class="btn btn-outline-primary btn-sm">Full Reconcile</button>
+                                </form>
+                                <form method="post" asp-page-handler="Delete">
+                                    <input type="hidden" name="sourceId" value="@source.Id" />
+                                    <button type="submit" class="btn btn-outline-danger btn-sm">Delete</button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="6" class="bg-light">
+                            <form method="post" asp-page-handler="Update" class="row g-1 align-items-center">
+                                <input type="hidden" name="sourceId" value="@source.Id" />
+                                <div class="col-md-2"><input class="form-control form-control-sm" name="name" value="@source.Name" /></div>
+                                <div class="col-md-3"><input class="form-control form-control-sm" name="rootPath" value="@source.RootPath" /></div>
+                                <div class="col-md-2"><input class="form-control form-control-sm" name="includePatterns" value="@source.IncludePatterns" /></div>
+                                <div class="col-md-2"><input class="form-control form-control-sm" name="excludePatterns" value="@source.ExcludePatterns" /></div>
+                                <div class="col-md-1"><input class="form-control form-control-sm" type="number" min="1" max="1440" name="scanIntervalMinutes" value="@source.ScanIntervalMinutes" /></div>
+                                <div class="col-md-1 form-check">
+                                    <input class="form-check-input" type="checkbox" name="isRecursive" value="true" @(source.IsRecursive ? "checked" : null) />
+                                    <label class="form-check-label">Recursive</label>
+                                </div>
+                                <div class="col-md-1 form-check">
+                                    <input class="form-check-input" type="checkbox" name="isEnabled" value="true" @(source.IsEnabled ? "checked" : null) />
+                                    <label class="form-check-label">Enabled</label>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-sm btn-secondary">Save Changes</button>
+                                </div>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr><td colspan="6" class="text-muted">No sources configured.</td></tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>

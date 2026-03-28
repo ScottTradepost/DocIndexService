@@ -1,0 +1,14 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/DocIndexService.Admin/DocIndexService.Admin.csproj" />
+    <Project Path="src/DocIndexService.Api/DocIndexService.Api.csproj" />
+    <Project Path="src/DocIndexService.Application/DocIndexService.Application.csproj" />
+    <Project Path="src/DocIndexService.Contracts/DocIndexService.Contracts.csproj" />
+    <Project Path="src/DocIndexService.Core/DocIndexService.Core.csproj" />
+    <Project Path="src/DocIndexService.Infrastructure/DocIndexService.Infrastructure.csproj" />
+    <Project Path="src/DocIndexService.Worker/DocIndexService.Worker.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/DocIndexService.Tests/DocIndexService.Tests.csproj" />
+  </Folder>
+</Solution>
