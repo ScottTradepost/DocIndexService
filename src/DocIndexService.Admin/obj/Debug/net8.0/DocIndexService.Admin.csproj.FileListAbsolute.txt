@@ -59,3 +59,4 @@ C:\Users\scott\sq_Media_Projects\DocIndexService\src\DocIndexService.Admin\obj\D
 C:\Users\scott\sq_Media_Projects\DocIndexService\src\DocIndexService.Admin\obj\Debug\net8.0\DocIndexService.Admin.pdb
 C:\Users\scott\sq_Media_Projects\DocIndexService\src\DocIndexService.Admin\obj\Debug\net8.0\DocIndexService.Admin.genruntimeconfig.cache
 C:\Users\scott\sq_Media_Projects\DocIndexService\src\DocIndexService.Admin\obj\Debug\net8.0\ref\DocIndexService.Admin.dll
+C:\Users\scott\sq_Media_Projects\DocIndexService\src\DocIndexService.Admin\obj\Debug\net8.0\DocIndexService.Admin.sourcelink.json

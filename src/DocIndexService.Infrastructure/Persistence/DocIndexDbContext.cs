@@ -39,9 +39,21 @@ public sealed class DocIndexDbContext : DbContext, IDocIndexDbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.HasPostgresExtension("vector");
+        var isNpgsqlProvider = (Database.ProviderName ?? string.Empty)
+            .Contains("Npgsql", StringComparison.OrdinalIgnoreCase);
+
+        if (isNpgsqlProvider)
+        {
+            modelBuilder.HasPostgresExtension("vector");
+        }
 
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(DocIndexDbContext).Assembly);
+
+        if (!isNpgsqlProvider)
+        {
+            // Non-Npgsql providers (for example EF InMemory in tests) cannot map pgvector's CLR type.
+            modelBuilder.Entity<DocumentChunk>().Ignore(x => x.Embedding);
+        }
 
         base.OnModelCreating(modelBuilder);
     }

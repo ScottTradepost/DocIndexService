@@ -124,3 +124,15 @@ C:\Users\scott\sq_Media_Projects\DocIndexService\tests\DocIndexService.Tests\obj
 C:\Users\scott\sq_Media_Projects\DocIndexService\tests\DocIndexService.Tests\obj\Debug\net8.0\DocIndexService.Tests.pdb
 C:\Users\scott\sq_Media_Projects\DocIndexService\tests\DocIndexService.Tests\obj\Debug\net8.0\DocIndexService.Tests.genruntimeconfig.cache
 C:\Users\scott\sq_Media_Projects\DocIndexService\tests\DocIndexService.Tests\obj\Debug\net8.0\ref\DocIndexService.Tests.dll
+C:\Users\scott\sq_Media_Projects\DocIndexService\tests\DocIndexService.Tests\obj\Debug\net8.0\DocIndexService.Tests.sourcelink.json
+C:\Users\scott\sq_Media_Projects\DocIndexService\tests\DocIndexService.Tests\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\Users\scott\sq_Media_Projects\DocIndexService\tests\DocIndexService.Tests\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\scott\sq_Media_Projects\DocIndexService\tests\DocIndexService.Tests\bin\Debug\net8.0\DocIndexService.Admin.deps.json
+C:\Users\scott\sq_Media_Projects\DocIndexService\tests\DocIndexService.Tests\bin\Debug\net8.0\DocIndexService.Admin.runtimeconfig.json
+C:\Users\scott\sq_Media_Projects\DocIndexService\tests\DocIndexService.Tests\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\scott\sq_Media_Projects\DocIndexService\tests\DocIndexService.Tests\bin\Debug\net8.0\appsettings.json
+C:\Users\scott\sq_Media_Projects\DocIndexService\tests\DocIndexService.Tests\bin\Debug\net8.0\DocIndexService.Admin.staticwebassets.runtime.json
+C:\Users\scott\sq_Media_Projects\DocIndexService\tests\DocIndexService.Tests\bin\Debug\net8.0\DocIndexService.Admin.staticwebassets.endpoints.json
+C:\Users\scott\sq_Media_Projects\DocIndexService\tests\DocIndexService.Tests\bin\Debug\net8.0\DocIndexService.Admin.exe
+C:\Users\scott\sq_Media_Projects\DocIndexService\tests\DocIndexService.Tests\bin\Debug\net8.0\DocIndexService.Admin.dll
+C:\Users\scott\sq_Media_Projects\DocIndexService\tests\DocIndexService.Tests\bin\Debug\net8.0\DocIndexService.Admin.pdb

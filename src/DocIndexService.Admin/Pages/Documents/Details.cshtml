@@ -1,0 +1,60 @@
+@page "{id:guid}"
+@model DocIndexService.Admin.Pages.Documents.DetailsModel
+@{
+    ViewData["Title"] = "Document Details";
+}
+
+<h1 class="h4 mb-3">Document Details</h1>
+<p class="text-muted">Stubbed details page for metadata, status, and workflow actions.</p>
+
+<div class="row g-3">
+    <div class="col-lg-8">
+        <div class="card">
+            <div class="card-header">Metadata</div>
+            <div class="card-body">
+                <dl class="row mb-0">
+                    <dt class="col-sm-3">Document Id</dt>
+                    <dd class="col-sm-9"><code>@Model.DocumentId</code></dd>
+
+                    <dt class="col-sm-3">File Name</dt>
+                    <dd class="col-sm-9">(pending wiring)</dd>
+
+                    <dt class="col-sm-3">Full Path</dt>
+                    <dd class="col-sm-9 text-break">(pending wiring)</dd>
+
+                    <dt class="col-sm-3">Status</dt>
+                    <dd class="col-sm-9"><span class="badge bg-secondary">Unknown</span></dd>
+
+                    <dt class="col-sm-3">Last Indexed</dt>
+                    <dd class="col-sm-9">n/a</dd>
+                </dl>
+            </div>
+        </div>
+
+        <div class="card mt-3">
+            <div class="card-header">Extracted Text Preview</div>
+            <div class="card-body">
+                <p class="text-muted mb-0">Preview stub. Full extraction preview will be wired from persistence.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-header">Actions</div>
+            <div class="card-body d-grid gap-2">
+                <button class="btn btn-outline-primary btn-sm" disabled>Reprocess</button>
+                <button class="btn btn-outline-warning btn-sm" disabled>Mark Ignored</button>
+                <button class="btn btn-outline-secondary btn-sm" disabled>Open File</button>
+                <a asp-page="/Documents/Index" class="btn btn-link btn-sm">Back to Documents</a>
+            </div>
+        </div>
+
+        <div class="card mt-3">
+            <div class="card-header">Version History</div>
+            <div class="card-body">
+                <p class="text-muted mb-0">Version list stub.</p>
+            </div>
+        </div>
+    </div>
+</div>

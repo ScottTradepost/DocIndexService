@@ -120,6 +120,84 @@ public sealed class IngestionCoordinator : IIngestionCoordinator
         }
     }
 
+    public async Task<Guid?> RetryFailedJobAsync(Guid jobId, CancellationToken cancellationToken)
+    {
+        var failedJob = await _dbContext.IngestionJobsSet
+            .FirstOrDefaultAsync(x => x.Id == jobId, cancellationToken);
+
+        if (failedJob is null || failedJob.Status != IngestionJobStatus.Failed)
+        {
+            return null;
+        }
+
+        var now = _clock.UtcNow;
+        var retryJob = new IngestionJob
+        {
+            Id = Guid.NewGuid(),
+            SourceId = failedJob.SourceId,
+            DocumentId = failedJob.DocumentId,
+            JobType = failedJob.JobType,
+            Status = IngestionJobStatus.Pending,
+            StartedUtc = now,
+            AttemptCount = 0,
+            PayloadJson = failedJob.PayloadJson,
+            CreatedUtc = now,
+            UpdatedUtc = now
+        };
+
+        await _dbContext.IngestionJobsSet.AddAsync(retryJob, cancellationToken);
+
+        await AddJobEventAsync(
+            failedJob.Id,
+            "RetryRequested",
+            $"Retry requested; queued as {retryJob.Id}",
+            new { retryJobId = retryJob.Id },
+            cancellationToken);
+
+        await AddJobEventAsync(
+            retryJob.Id,
+            "RetriedFromFailedJob",
+            "Retry job created from failed predecessor",
+            new { previousJobId = failedJob.Id },
+            cancellationToken);
+
+        await _dbContext.SaveChangesAsync(cancellationToken);
+        _logger.LogInformation("Queued retry job {RetryJobId} from failed job {FailedJobId}", retryJob.Id, failedJob.Id);
+
+        return retryJob.Id;
+    }
+
+    public async Task<Guid?> EnqueueDocumentReprocessAsync(Guid documentId, CancellationToken cancellationToken)
+    {
+        var document = await _dbContext.DocumentsSet
+            .FirstOrDefaultAsync(x => x.Id == documentId, cancellationToken);
+
+        if (document is null)
+        {
+            return null;
+        }
+
+        await EnqueueDocumentJobAsync(
+            document.SourceId,
+            document.Id,
+            IngestionOperation.Updated,
+            document.RelativePath,
+            document.FullPath,
+            fullReconciliation: false,
+            cancellationToken);
+
+        await _dbContext.SaveChangesAsync(cancellationToken);
+
+        var queuedJobId = await _dbContext.IngestionJobsSet
+            .Where(x => x.DocumentId == document.Id && x.Status == IngestionJobStatus.Pending)
+            .OrderByDescending(x => x.CreatedUtc)
+            .Select(x => x.Id)
+            .FirstOrDefaultAsync(cancellationToken);
+
+        _logger.LogInformation("Queued document reprocess job {JobId} for document {DocumentId}", queuedJobId, document.Id);
+        return queuedJobId == Guid.Empty ? null : queuedJobId;
+    }
+
     private async Task RunSourceScanAsync(DocumentSource source, bool fullReconciliation, CancellationToken cancellationToken)
     {
         var now = _clock.UtcNow;

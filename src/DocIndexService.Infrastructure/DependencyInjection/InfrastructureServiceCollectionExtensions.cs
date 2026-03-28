@@ -1,5 +1,8 @@
 using DocIndexService.Application.Abstractions.Persistence;
 using DocIndexService.Application.Abstractions.Persistence.Repositories;
+using DocIndexService.Application.Abstractions.Api.Documents;
+using DocIndexService.Application.Abstractions.Api.Jobs;
+using DocIndexService.Application.Abstractions.Api.Sources;
 using DocIndexService.Application.Abstractions.Dashboard;
 using DocIndexService.Application.Abstractions.External;
 using DocIndexService.Application.Abstractions.Ingestion;
@@ -10,6 +13,9 @@ using DocIndexService.Core.Options;
 using DocIndexService.Infrastructure.Persistence;
 using DocIndexService.Infrastructure.Persistence.Repositories;
 using DocIndexService.Infrastructure.Clients;
+using DocIndexService.Infrastructure.Services.Api.Documents;
+using DocIndexService.Infrastructure.Services.Api.Jobs;
+using DocIndexService.Infrastructure.Services.Api.Sources;
 using DocIndexService.Infrastructure.Services.Dashboard;
 using DocIndexService.Infrastructure.Services.Ingestion;
 using DocIndexService.Infrastructure.Services.Search;
@@ -85,6 +91,10 @@ public static class InfrastructureServiceCollectionExtensions
 
         services.AddScoped<IDocumentSourceService, DocumentSourceService>();
         services.AddScoped<IDashboardStatsService, DashboardStatsService>();
+
+        services.AddScoped<ISourceApiService, SourceApiService>();
+        services.AddScoped<IDocumentApiService, DocumentApiService>();
+        services.AddScoped<IJobApiService, JobApiService>();
 
         services.AddScoped<ISearchService, PlaceholderSearchService>();
 

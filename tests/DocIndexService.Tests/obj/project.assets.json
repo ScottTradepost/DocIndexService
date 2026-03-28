@@ -65,6 +65,22 @@
           "lib/netstandard2.0/_._": {}
         }
       },
+      "Microsoft.EntityFrameworkCore.InMemory/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "8.0.2"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.EntityFrameworkCore.InMemory.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.EntityFrameworkCore.InMemory.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.EntityFrameworkCore.Relational/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -301,10 +317,10 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
-      "Microsoft.Extensions.Logging.Abstractions/8.0.0": {
+      "Microsoft.Extensions.Logging.Abstractions/8.0.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0"
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.1"
         },
         "compile": {
           "lib/net8.0/Microsoft.Extensions.Logging.Abstractions.dll": {
@@ -2304,6 +2320,24 @@
           "build/net6.0/xunit.runner.visualstudio.props": {}
         }
       },
+      "DocIndexService.Admin/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "DocIndexService.Application": "1.0.0",
+          "DocIndexService.Contracts": "1.0.0",
+          "DocIndexService.Infrastructure": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DocIndexService.Admin.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DocIndexService.Admin.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "DocIndexService.Application/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -2523,6 +2557,20 @@
         "lib/netstandard2.0/_._",
         "microsoft.entityframeworkcore.analyzers.8.0.2.nupkg.sha512",
         "microsoft.entityframeworkcore.analyzers.nuspec"
+      ]
+    },
+    "Microsoft.EntityFrameworkCore.InMemory/8.0.2": {
+      "sha512": "vPpioRk+6BwQf/apqBQQ2gLL/6FMOj25L6d2lli08FmRh2W9QrnShyKhzsDAydWcH6Po69gQXgHbBQFAafmo3A==",
+      "type": "package",
+      "path": "microsoft.entityframeworkcore.inmemory/8.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "lib/net8.0/Microsoft.EntityFrameworkCore.InMemory.dll",
+        "lib/net8.0/Microsoft.EntityFrameworkCore.InMemory.xml",
+        "microsoft.entityframeworkcore.inmemory.8.0.2.nupkg.sha512",
+        "microsoft.entityframeworkcore.inmemory.nuspec"
       ]
     },
     "Microsoft.EntityFrameworkCore.Relational/8.0.2": {
@@ -2885,10 +2933,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.Extensions.Logging.Abstractions/8.0.0": {
-      "sha512": "arDBqTgFCyS0EvRV7O3MZturChstm50OJ0y9bDJvAcmEPJm0FFpFyjU/JLYyStNGGey081DvnQYlncNX5SJJGA==",
+    "Microsoft.Extensions.Logging.Abstractions/8.0.1": {
+      "sha512": "RIFgaqoaINxkM2KTOw72dmilDmTrYA0ns2KW4lDz4gZ2+o6IQ894CzmdL3StM2oh7QQq44nCWiqKqc4qUI9Jmg==",
       "type": "package",
-      "path": "microsoft.extensions.logging.abstractions/8.0.0",
+      "path": "microsoft.extensions.logging.abstractions/8.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2953,7 +3001,7 @@
         "lib/net8.0/Microsoft.Extensions.Logging.Abstractions.xml",
         "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll",
         "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.xml",
-        "microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
+        "microsoft.extensions.logging.abstractions.8.0.1.nupkg.sha512",
         "microsoft.extensions.logging.abstractions.nuspec",
         "useSharedDesignerContext.txt"
       ]
@@ -7111,6 +7159,11 @@
         "xunit.runner.visualstudio.nuspec"
       ]
     },
+    "DocIndexService.Admin/1.0.0": {
+      "type": "project",
+      "path": "../../src/DocIndexService.Admin/DocIndexService.Admin.csproj",
+      "msbuildProject": "../../src/DocIndexService.Admin/DocIndexService.Admin.csproj"
+    },
     "DocIndexService.Application/1.0.0": {
       "type": "project",
       "path": "../../src/DocIndexService.Application/DocIndexService.Application.csproj",
@@ -7134,10 +7187,13 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "DocIndexService.Admin >= 1.0.0",
       "DocIndexService.Application >= 1.0.0",
       "DocIndexService.Contracts >= 1.0.0",
       "DocIndexService.Core >= 1.0.0",
       "DocIndexService.Infrastructure >= 1.0.0",
+      "Microsoft.EntityFrameworkCore.InMemory >= 8.0.2",
+      "Microsoft.Extensions.Logging.Abstractions >= 8.0.1",
       "Microsoft.NET.Test.Sdk >= 17.8.0",
       "coverlet.collector >= 6.0.0",
       "xunit >= 2.5.3",
@@ -7177,6 +7233,9 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
+            "C:\\Users\\scott\\sq_Media_Projects\\DocIndexService\\src\\DocIndexService.Admin\\DocIndexService.Admin.csproj": {
+              "projectPath": "C:\\Users\\scott\\sq_Media_Projects\\DocIndexService\\src\\DocIndexService.Admin\\DocIndexService.Admin.csproj"
+            },
             "C:\\Users\\scott\\sq_Media_Projects\\DocIndexService\\src\\DocIndexService.Application\\DocIndexService.Application.csproj": {
               "projectPath": "C:\\Users\\scott\\sq_Media_Projects\\DocIndexService\\src\\DocIndexService.Application\\DocIndexService.Application.csproj"
             },
@@ -7208,6 +7267,14 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "Microsoft.EntityFrameworkCore.InMemory": {
+            "target": "Package",
+            "version": "[8.0.2, )"
+          },
+          "Microsoft.Extensions.Logging.Abstractions": {
+            "target": "Package",
+            "version": "[8.0.1, )"
+          },
           "Microsoft.NET.Test.Sdk": {
             "target": "Package",
             "version": "[17.8.0, )"

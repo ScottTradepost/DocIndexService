@@ -20,3 +20,4 @@ C:\Users\scott\sq_Media_Projects\DocIndexService\src\DocIndexService.Infrastruct
 C:\Users\scott\sq_Media_Projects\DocIndexService\src\DocIndexService.Infrastructure\obj\Debug\net8.0\DocIndexService.Infrastructure.pdb
 C:\Users\scott\sq_Media_Projects\DocIndexService\src\DocIndexService.Infrastructure\obj\Debug\net8.0\DocIndexService.Infrastructure.genruntimeconfig.cache
 C:\Users\scott\sq_Media_Projects\DocIndexService\src\DocIndexService.Infrastructure\obj\Debug\net8.0\ref\DocIndexService.Infrastructure.dll
+C:\Users\scott\sq_Media_Projects\DocIndexService\src\DocIndexService.Infrastructure\obj\Debug\net8.0\DocIndexService.Infrastructure.sourcelink.json

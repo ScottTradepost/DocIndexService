@@ -11,6 +11,8 @@
 
   <ItemGroup>
     <PackageReference Include="coverlet.collector" Version="6.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="8.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.1" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
     <PackageReference Include="xunit" Version="2.5.3" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.5.3" />
@@ -21,6 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\DocIndexService.Admin\DocIndexService.Admin.csproj" />
     <ProjectReference Include="..\..\src\DocIndexService.Application\DocIndexService.Application.csproj" />
     <ProjectReference Include="..\..\src\DocIndexService.Infrastructure\DocIndexService.Infrastructure.csproj" />
     <ProjectReference Include="..\..\src\DocIndexService.Core\DocIndexService.Core.csproj" />

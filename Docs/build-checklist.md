@@ -1,7 +1,7 @@
 # DocIndexService Build Checklist
 
 ## Repository Setup
-- [ ] Create `/src`, `/tests`, `/docs`, `/deploy/docker`
+- [x] Create `/src`, `/tests`, `/docs`, `/deploy/docker`
 - [x] Add bootstrap and planning docs to `/docs`
 - [x] Create solution file
 - [x] Create all initial projects
@@ -52,7 +52,7 @@
 - [x] Dashboard page
 - [x] Sources page
 - [x] Documents page
-- [ ] Document details page
+- [x] Document details page
 - [x] Jobs page
 - [x] Audit log page
 - [x] Users page
@@ -76,7 +76,7 @@
 - [x] File fingerprinting
 - [x] Job creation
 - [x] Job event logging
-- [ ] Retry failed job support
+- [x] Retry failed job support
 
 ## Extraction and Indexing
 - [x] IFileScanner
@@ -93,35 +93,35 @@
 
 ## API
 - [x] Health endpoints
-- [ ] Sources endpoints
-- [ ] Documents endpoints
-- [ ] Jobs endpoints
+- [x] Sources endpoints
+- [x] Documents endpoints
+- [x] Jobs endpoints
 - [x] Search endpoints
 - [x] Swagger/OpenAPI
 - [x] Versioned route structure
 
 ## Dev Setup
-- [ ] Docker Compose for Postgres
-- [ ] Docker Compose for Tika
-- [ ] Docker Compose for Ollama
-- [ ] Sample environment file
-- [ ] Setup instructions in README
-- [ ] Migration instructions in README
+- [x] Docker Compose for Postgres
+- [x] Docker Compose for Tika
+- [x] Docker Compose for Ollama
+- [x] Sample environment file
+- [x] Setup instructions in README
+- [x] Migration instructions in README
 
 ## Tests
-- [ ] Source validation tests
-- [ ] File scan detection tests
-- [ ] Ingestion job creation tests
-- [ ] Role access tests
+- [x] Source validation tests
+- [x] File scan detection tests
+- [x] Ingestion job creation tests
+- [x] Role access tests
 - [ ] Document persistence tests
-- [ ] Basic integration test path
+- [x] Basic integration test path
 
 ## Before Moving to Phase 2
 - [x] Solution builds cleanly
-- [ ] Database migration works
+- [x] Database migration works
 - [ ] Admin login works
 - [ ] Source CRUD works
 - [ ] Scan loop runs
 - [ ] Jobs appear in UI
-- [ ] API loads in Swagger
+- [x] API loads in Swagger
 - [ ] Core docs are up to date
