@@ -1,10 +1,12 @@
 using DocIndexService.Application.Abstractions.Search;
 using DocIndexService.Contracts.Api.Search;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DocIndexService.Api.Controllers;
 
 [ApiController]
+[Authorize]
 [Route("api/v1")]
 public sealed class SearchController : ControllerBase
 {

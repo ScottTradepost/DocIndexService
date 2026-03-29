@@ -1,10 +1,12 @@
 using DocIndexService.Application.Abstractions.Api.Jobs;
 using DocIndexService.Contracts.Api.Jobs;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DocIndexService.Api.Controllers;
 
 [ApiController]
+[Authorize]
 [Route("api/v1/jobs")]
 public sealed class JobsController : ControllerBase
 {

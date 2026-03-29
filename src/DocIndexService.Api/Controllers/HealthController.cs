@@ -1,9 +1,11 @@
 using DocIndexService.Contracts.Api.Health;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DocIndexService.Api.Controllers;
 
 [ApiController]
+[AllowAnonymous]
 [Route("api/v1/health")]
 public sealed class HealthController : ControllerBase
 {

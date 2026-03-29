@@ -1,10 +1,12 @@
 using DocIndexService.Application.Abstractions.Api.Documents;
 using DocIndexService.Contracts.Api.Documents;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DocIndexService.Api.Controllers;
 
 [ApiController]
+[Authorize]
 [Route("api/v1/documents")]
 public sealed class DocumentsController : ControllerBase
 {

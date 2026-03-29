@@ -1,10 +1,12 @@
 using DocIndexService.Application.Abstractions.Api.Sources;
 using DocIndexService.Contracts.Api.Sources;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DocIndexService.Api.Controllers;
 
 [ApiController]
+[Authorize]
 [Route("api/v1/sources")]
 public sealed class SourcesController : ControllerBase
 {
