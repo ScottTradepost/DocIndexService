@@ -5,8 +5,8 @@ C:\Users\scott\sq_Media_Projects\DocIndexService\src\DocIndexService.Contracts\o
 C:\Users\scott\sq_Media_Projects\DocIndexService\src\DocIndexService.Contracts\obj\Debug\net8.0\DocIndexService.Contracts.AssemblyInfoInputs.cache
 C:\Users\scott\sq_Media_Projects\DocIndexService\src\DocIndexService.Contracts\obj\Debug\net8.0\DocIndexService.Contracts.AssemblyInfo.cs
 C:\Users\scott\sq_Media_Projects\DocIndexService\src\DocIndexService.Contracts\obj\Debug\net8.0\DocIndexService.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\scott\sq_Media_Projects\DocIndexService\src\DocIndexService.Contracts\obj\Debug\net8.0\DocIndexService.Contracts.sourcelink.json
 C:\Users\scott\sq_Media_Projects\DocIndexService\src\DocIndexService.Contracts\obj\Debug\net8.0\DocIndexService.Contracts.dll
 C:\Users\scott\sq_Media_Projects\DocIndexService\src\DocIndexService.Contracts\obj\Debug\net8.0\refint\DocIndexService.Contracts.dll
 C:\Users\scott\sq_Media_Projects\DocIndexService\src\DocIndexService.Contracts\obj\Debug\net8.0\DocIndexService.Contracts.pdb
 C:\Users\scott\sq_Media_Projects\DocIndexService\src\DocIndexService.Contracts\obj\Debug\net8.0\ref\DocIndexService.Contracts.dll
-C:\Users\scott\sq_Media_Projects\DocIndexService\src\DocIndexService.Contracts\obj\Debug\net8.0\DocIndexService.Contracts.sourcelink.json

@@ -96,7 +96,7 @@ public static class InfrastructureServiceCollectionExtensions
         services.AddScoped<IDocumentApiService, DocumentApiService>();
         services.AddScoped<IJobApiService, JobApiService>();
 
-        services.AddScoped<ISearchService, PlaceholderSearchService>();
+        services.AddScoped<ISearchService, DatabaseSearchService>();
 
         return services;
     }

@@ -55,10 +55,10 @@ C:\Users\scott\sq_Media_Projects\DocIndexService\src\DocIndexService.Worker\obj\
 C:\Users\scott\sq_Media_Projects\DocIndexService\src\DocIndexService.Worker\obj\Debug\net8.0\DocIndexService.Worker.AssemblyInfoInputs.cache
 C:\Users\scott\sq_Media_Projects\DocIndexService\src\DocIndexService.Worker\obj\Debug\net8.0\DocIndexService.Worker.AssemblyInfo.cs
 C:\Users\scott\sq_Media_Projects\DocIndexService\src\DocIndexService.Worker\obj\Debug\net8.0\DocIndexService.Worker.csproj.CoreCompileInputs.cache
+C:\Users\scott\sq_Media_Projects\DocIndexService\src\DocIndexService.Worker\obj\Debug\net8.0\DocIndexService.Worker.sourcelink.json
 C:\Users\scott\sq_Media_Projects\DocIndexService\src\DocIndexService.Worker\obj\Debug\net8.0\DocIndex.7C18B3FE.Up2Date
 C:\Users\scott\sq_Media_Projects\DocIndexService\src\DocIndexService.Worker\obj\Debug\net8.0\DocIndexService.Worker.dll
 C:\Users\scott\sq_Media_Projects\DocIndexService\src\DocIndexService.Worker\obj\Debug\net8.0\refint\DocIndexService.Worker.dll
 C:\Users\scott\sq_Media_Projects\DocIndexService\src\DocIndexService.Worker\obj\Debug\net8.0\DocIndexService.Worker.pdb
 C:\Users\scott\sq_Media_Projects\DocIndexService\src\DocIndexService.Worker\obj\Debug\net8.0\DocIndexService.Worker.genruntimeconfig.cache
 C:\Users\scott\sq_Media_Projects\DocIndexService\src\DocIndexService.Worker\obj\Debug\net8.0\ref\DocIndexService.Worker.dll
-C:\Users\scott\sq_Media_Projects\DocIndexService\src\DocIndexService.Worker\obj\Debug\net8.0\DocIndexService.Worker.sourcelink.json

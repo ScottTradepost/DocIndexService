@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DocIndexService.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+caa0d6b36f01955e8d7ac73aa80d56bcd0d97df8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e11801156b3293d8af38ccfd141b6d16b39a8df8")]
 [assembly: System.Reflection.AssemblyProductAttribute("DocIndexService.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DocIndexService.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

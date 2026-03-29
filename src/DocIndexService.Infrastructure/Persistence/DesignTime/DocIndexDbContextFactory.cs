@@ -10,7 +10,7 @@ public sealed class DocIndexDbContextFactory : IDesignTimeDbContextFactory<DocIn
     {
         var optionsBuilder = new DbContextOptionsBuilder<DocIndexDbContext>();
         var connectionString = Environment.GetEnvironmentVariable("DOCINDEX_POSTGRES_CONNECTIONSTRING")
-            ?? "Host=localhost;Port=5432;Database=docindexservice;Username=postgres;Password=postgres";
+            ?? "Host=localhost;Port=5433;Database=docindexservice;Username=postgres;Password=postgres";
 
         optionsBuilder.UseNpgsql(connectionString, npgsql => npgsql.UseVector());
 

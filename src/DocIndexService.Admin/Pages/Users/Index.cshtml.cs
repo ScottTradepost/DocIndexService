@@ -118,6 +118,47 @@ public sealed class IndexModel : PageModel
         return RedirectToPage();
     }
 
+    public async Task<IActionResult> OnPostSetEnabledAsync(Guid userId, bool isEnabled, CancellationToken cancellationToken)
+    {
+        var user = await _dbContext.UsersSet.FindAsync(new object[] { userId }, cancellationToken: cancellationToken);
+        if (user is null)
+        {
+            StatusMessage = "User not found.";
+            return RedirectToPage();
+        }
+
+        user.IsEnabled = isEnabled;
+        user.UpdatedUtc = DateTime.UtcNow;
+        await _dbContext.SaveChangesAsync(cancellationToken);
+
+        var action = isEnabled ? "enabled" : "disabled";
+        StatusMessage = $"User '{user.UserName}' has been {action}.";
+        return RedirectToPage();
+    }
+
+    public async Task<IActionResult> OnPostResetPasswordAsync(Guid userId, string? newPassword, CancellationToken cancellationToken)
+    {
+        if (string.IsNullOrWhiteSpace(newPassword) || newPassword.Length < 8)
+        {
+            StatusMessage = "Password must be at least 8 characters.";
+            return RedirectToPage();
+        }
+
+        var user = await _dbContext.UsersSet.FindAsync(new object[] { userId }, cancellationToken: cancellationToken);
+        if (user is null)
+        {
+            StatusMessage = "User not found.";
+            return RedirectToPage();
+        }
+
+        user.PasswordHash = _passwordHasher.HashPassword(user, newPassword);
+        user.UpdatedUtc = DateTime.UtcNow;
+        await _dbContext.SaveChangesAsync(cancellationToken);
+
+        StatusMessage = $"Password for user '{user.UserName}' has been reset.";
+        return RedirectToPage();
+    }
+
     private async Task LoadPageAsync(CancellationToken cancellationToken)
     {
         Roles = await _dbContext.RolesSet

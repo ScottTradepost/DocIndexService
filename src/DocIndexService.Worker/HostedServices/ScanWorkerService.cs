@@ -7,16 +7,16 @@ namespace DocIndexService.Worker.HostedServices;
 public sealed class ScanWorkerService : BackgroundService
 {
     private readonly ILogger<ScanWorkerService> _logger;
+    private readonly IServiceScopeFactory _serviceScopeFactory;
     private readonly ScanOptions _scanOptions;
-    private readonly IIngestionCoordinator _ingestionCoordinator;
 
     public ScanWorkerService(
         ILogger<ScanWorkerService> logger,
-        IIngestionCoordinator ingestionCoordinator,
+        IServiceScopeFactory serviceScopeFactory,
         IOptions<ScanOptions> scanOptions)
     {
         _logger = logger;
-        _ingestionCoordinator = ingestionCoordinator;
+        _serviceScopeFactory = serviceScopeFactory;
         _scanOptions = scanOptions.Value;
     }
 
@@ -30,8 +30,11 @@ public sealed class ScanWorkerService : BackgroundService
 
             try
             {
-                await _ingestionCoordinator.RunScheduledScanCycleAsync(stoppingToken);
-                await _ingestionCoordinator.ProcessPendingJobsAsync(take: 25, stoppingToken);
+                await using var scope = _serviceScopeFactory.CreateAsyncScope();
+                var ingestionCoordinator = scope.ServiceProvider.GetRequiredService<IIngestionCoordinator>();
+
+                await ingestionCoordinator.RunScheduledScanCycleAsync(stoppingToken);
+                await ingestionCoordinator.ProcessPendingJobsAsync(take: 25, stoppingToken);
             }
             catch (OperationCanceledException) when (stoppingToken.IsCancellationRequested)
             {
